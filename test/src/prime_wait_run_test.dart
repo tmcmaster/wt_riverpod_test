@@ -26,7 +26,6 @@ void main() {
             expect(results[providerOne], 1);
             expect(results[providerTwo], 2);
           });
-      await sleep(second(5));
     });
     test('Testing with no dependencies.', () async {
       await primeWaitRun(
@@ -36,7 +35,6 @@ void main() {
           action: (riverpod, results) async {
             expect(results.length, 0);
           });
-      await sleep(second(5));
     });
     test('Testing nesting functions.', () async {
       await primeWaitRun(
@@ -63,7 +61,6 @@ void main() {
                   expect(results[providerFive], 5);
                 });
           });
-      await sleep(second(5));
     });
   });
 }

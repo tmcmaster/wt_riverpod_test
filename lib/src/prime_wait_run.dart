@@ -7,9 +7,9 @@ typedef SetupFunction = dynamic Function(ProviderContainer);
 typedef ActionFunction = dynamic Function(ProviderContainer, dynamic);
 
 dynamic primeWaitRun({
-  required ProviderContainer riverpod,
-  required List<ProviderBase> primeDependencies,
-  required ActionFunction action,
+  required final ProviderContainer riverpod,
+  final List<ProviderBase> primeDependencies = const [],
+  required final ActionFunction action,
   int? pauseMillis,
   int? pauseSeconds,
   Map<dynamic, dynamic> context = const {},

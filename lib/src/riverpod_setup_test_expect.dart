@@ -6,17 +6,21 @@ import 'package:riverpod_test/src/riverpod-test-stage.dart';
 import 'package:riverpod_test/src/riverpod.dart';
 
 Future<void> riverpodSetupTestExpect({
-  SetupFunction? defaultSetup,
+  SetupFunction? cannedSetup,
   bool log = false,
   List<Override> overrides = const [],
-  required RiverpodTestStage setup,
-  required RiverpodTestStage test,
-  required RiverpodTestStage expect,
+  final RiverpodTestStage setup = const RiverpodTestStage(),
+  final RiverpodTestStage test = const RiverpodTestStage(),
+  required final RiverpodTestStage expect,
 }) async {
   Completer completer = Completer<void>();
 
   /// Setup Riverpod container
   final riverpod = Riverpod.create(overrides: overrides, log: log);
+
+  if (cannedSetup != null) {
+    await cannedSetup(riverpod);
+  }
 
   /// do the 'setup' for the test
   await primeWaitRun(

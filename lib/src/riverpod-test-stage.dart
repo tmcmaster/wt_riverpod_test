@@ -8,7 +8,7 @@ class RiverpodTestStage {
   final List<ProviderBase> dependencies;
   final ActionFunction? action;
 
-  RiverpodTestStage({
+  const RiverpodTestStage({
     this.delay = 0,
     this.dependencies = const [],
     this.action,

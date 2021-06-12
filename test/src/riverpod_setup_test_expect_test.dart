@@ -17,7 +17,7 @@ void main() {
     test('Happy days', () async {
       await riverpodSetupTestExpect(
         log: true,
-        defaultSetup: defaultSetup,
+        cannedSetup: defaultSetup,
         overrides: [],
         setup: RiverpodTestStage(
           delay: 100,
