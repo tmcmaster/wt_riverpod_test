@@ -8,7 +8,7 @@ Created from templates made available by Stagehand under a BSD-style
 A simple usage example:
 
 ```dart
-import 'package:riverpod_test/riverpod_test.dart';
+import 'package:riverpod_test/riverpod_setup_test_expect.dart';
 
 main() {
   var awesome = new Awesome();

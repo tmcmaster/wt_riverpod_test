@@ -12,4 +12,11 @@ build/
 # Directory created by dartdoc
 doc/api/
 
+junk
+hold
+
 .idea
+
+coverage
+.test_cov.dart
+coverage_helper_test.dart
