@@ -13,8 +13,8 @@ void main() {
     test('Single provider change', () {
       final riverpod = ProviderContainer(observers: [ProviderChangeLogger()]);
       sleep(second(2));
-      riverpod.read(providerOneProvider).state = 3;
-      riverpod.read(providerOneProvider).state = 4;
+      riverpod.read(providerOneProvider.notifier).update((state) => 2);
+      riverpod.read(providerOneProvider.notifier).state = 4;
       sleep(second(2));
     });
   });

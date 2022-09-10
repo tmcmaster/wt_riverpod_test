@@ -2,7 +2,7 @@ import 'package:riverpod/riverpod.dart';
 
 class ProviderChangeLogger extends ProviderObserver {
   @override
-  void didUpdateProvider(ProviderBase provider, Object? newValue) {
+  void didUpdateProvider(ProviderBase provider, Object? oldValue, Object? newValue, ProviderContainer container) {
     final value = _getValueAsString(newValue);
     final name = _getProviderAsString(provider);
     print('Provider($name) value has changed: $value');

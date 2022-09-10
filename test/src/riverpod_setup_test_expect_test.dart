@@ -24,7 +24,7 @@ void main() {
           dependencies: [providerOneProvider],
           action: (riverpod, context) {
             print('Setup phase');
-            riverpod.read(providerOneProvider).state = 11;
+            riverpod.read(providerOneProvider.notifier).state = 11;
           },
         ),
         test: RiverpodTestStage(
@@ -32,8 +32,8 @@ void main() {
           dependencies: [providerTwoProvider],
           action: (riverpod, context) {
             print('Testing phase');
-            expect(riverpod.read(providerOneProvider).state, 11);
-            riverpod.read(providerTwoProvider).state = 22;
+            expect(riverpod.read(providerOneProvider.notifier).state, 11);
+            riverpod.read(providerTwoProvider.notifier).state = 22;
           },
         ),
         expect: RiverpodTestStage(
@@ -47,11 +47,11 @@ void main() {
           ],
           action: (riverpod, context) {
             print('Expect phase');
-            expect(riverpod.read(providerOneProvider).state, 11);
-            expect(riverpod.read(providerTwoProvider).state, 22);
-            expect(riverpod.read(providerThreeProvider).state, 3);
-            expect(riverpod.read(providerFourProvider).state, 4);
-            expect(riverpod.read(providerFiveProvider).state, 5);
+            expect(riverpod.read(providerOneProvider.notifier).state, 11);
+            expect(riverpod.read(providerTwoProvider.notifier).state, 22);
+            expect(riverpod.read(providerThreeProvider.notifier).state, 3);
+            expect(riverpod.read(providerFourProvider.notifier).state, 4);
+            expect(riverpod.read(providerFiveProvider.notifier).state, 5);
             expect(context, isA<Map>());
             Map<dynamic, dynamic> map = context;
             expect(map.length, 5);
