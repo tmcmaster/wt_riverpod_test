@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('Test RiverpodTestStage', () {
-    test('Happy days', () {
+    test('Happy days', () async {
       final stepStage = RiverpodTestStage(
         dependencies: [],
         delay: 10,
@@ -12,10 +12,10 @@ void main() {
       );
       final context = {};
       final riverpod = Riverpod.create();
-      final resultContext = stepStage.execute(riverpod, context);
+      final resultContext = await stepStage.execute(riverpod, context);
       expect(resultContext.length, 0);
     });
-    test('Test action returns a String', () {
+    test('Test action returns a String', () async {
       final result = ':-)';
       final stepStage = RiverpodTestStage(
         dependencies: [],
@@ -29,7 +29,7 @@ void main() {
         'b': 'B',
       };
       final riverpod = Riverpod.create();
-      final resultContext = stepStage.execute(riverpod, context);
+      final resultContext = await stepStage.execute(riverpod, context);
       expect(resultContext.length, 3);
       expect(resultContext.containsKey(RiverpodTestStage.PREV_ACTION_RESULT), isTrue);
       expect(resultContext[RiverpodTestStage.PREV_ACTION_RESULT], result);
@@ -37,7 +37,7 @@ void main() {
       expect(resultContext['b'], 'B');
     });
 
-    test('Test action returns a Map', () {
+    test('Test action returns a Map', () async {
       final result = {
         'b': 'BB',
         'c': 'C',
@@ -54,7 +54,7 @@ void main() {
         'b': 'B',
       };
       final riverpod = Riverpod.create();
-      final resultContext = stepStage.execute(riverpod, context);
+      final resultContext = await stepStage.execute(riverpod, context);
       expect(resultContext.length, 3);
       expect(resultContext['a'], 'A');
       expect(resultContext['b'], 'BB');

@@ -14,9 +14,9 @@ class RiverpodTestStage {
     this.action,
   });
 
-  Map<dynamic, dynamic> execute(ProviderContainer riverpod, Map<dynamic, dynamic> context) {
-    final actionResult = (action == null ? null : action!(riverpod, context));
-    return (actionResult == null ? context : _addResultToContext(context, actionResult));
+  Future<Map<dynamic, dynamic>> execute(ProviderContainer riverpod, Map<dynamic, dynamic> context) async {
+    final actionResult = (action == null ? null : await action!(riverpod, context));
+    return Future.value(actionResult == null ? context : _addResultToContext(context, actionResult));
   }
 
   Map<dynamic, dynamic> _addResultToContext(Map<dynamic, dynamic> context, dynamic result) {

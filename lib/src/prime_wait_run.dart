@@ -17,5 +17,5 @@ dynamic primeWaitRun({
   final results = {for (var dep in primeDependencies) dep: riverpod.read(dep)};
   if (pauseMillis != null) await sleep(millisecond(pauseMillis));
   if (pauseSeconds != null) await sleep(second(pauseSeconds));
-  return action(riverpod, results);
+  return await action(riverpod, results);
 }

@@ -28,7 +28,7 @@ Future<void> riverpodSetupTestExpect({
     primeDependencies: setup.dependencies,
     pauseMillis: setup.delay,
     action: (riverpod, context) async {
-      final setupResultContext = setup.execute(riverpod, context);
+      final setupResultContext = await setup.execute(riverpod, context);
 
       /// do the 'test' part of the test
       await primeWaitRun(
@@ -37,7 +37,7 @@ Future<void> riverpodSetupTestExpect({
         primeDependencies: test.dependencies,
         pauseMillis: test.delay,
         action: (riverpod, context) async {
-          final testResultContext = test.execute(riverpod, context);
+          final testResultContext = await test.execute(riverpod, context);
 
           /// do the 'expect' part of the test
           await primeWaitRun(
@@ -46,7 +46,7 @@ Future<void> riverpodSetupTestExpect({
             primeDependencies: expect.dependencies,
             pauseMillis: expect.delay,
             action: (riverpod, context) async {
-              expect.execute(riverpod, context);
+              await expect.execute(riverpod, context);
               completer.complete();
             },
           );
