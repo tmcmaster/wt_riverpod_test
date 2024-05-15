@@ -1,5 +1,5 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:riverpod_test/riverpod_test.dart';
+import 'package:wt_riverpod_test/riverpod_test.dart';
 
 /// read values from some provider dependencies, sleep for a bit, and then call an action.
 

@@ -1,7 +1,7 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:riverpod_test/src/prime_wait_run.dart';
-import 'package:riverpod_test/src/riverpod-test-stage.dart';
-import 'package:riverpod_test/src/riverpod_setup_test_expect.dart';
+import 'package:wt_riverpod_test/src/prime_wait_run.dart';
+import 'package:wt_riverpod_test/src/riverpod-test-stage.dart';
+import 'package:wt_riverpod_test/src/riverpod_setup_test_expect.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-name: riverpod_test
+name: wt_riverpod_test
 description: A starting point for Dart libraries or applications.
 version: 0.0.1
 publish_to: 'none'
@@ -15,6 +15,5 @@ dev_dependencies:
   pedantic:
   lint:
   test:
-  #test_coverage:
   coverage:
   test_cov:

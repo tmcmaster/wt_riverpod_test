@@ -1,5 +1,5 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:riverpod_test/src/provider-change-logger.dart';
+import 'package:wt_riverpod_test/src/provider-change-logger.dart';
 
 class Riverpod {
   static ProviderContainer create({

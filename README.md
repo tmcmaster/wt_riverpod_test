@@ -1,4 +1,4 @@
-# riverpod_test
+# wt_riverpod_test
 
 This is a library for testing Riverpod providers.
 

@@ -1,5 +1,5 @@
-import 'package:riverpod_test/src/riverpod-test-stage.dart';
-import 'package:riverpod_test/src/riverpod.dart';
+import 'package:wt_riverpod_test/src/riverpod-test-stage.dart';
+import 'package:wt_riverpod_test/src/riverpod.dart';
 import 'package:test/test.dart';
 
 void main() {

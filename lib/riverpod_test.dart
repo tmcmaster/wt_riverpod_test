@@ -1,4 +1,4 @@
-library riverpod_test;
+library wt_riverpod_test;
 
 export 'src/prime_wait_run.dart';
 export 'src/provider-change-logger.dart';

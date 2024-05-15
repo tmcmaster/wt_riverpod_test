@@ -1,4 +1,4 @@
-import 'package:riverpod_test/src/sleep.dart';
+import 'package:wt_riverpod_test/src/sleep.dart';
 import 'package:test/test.dart';
 
 void main() {

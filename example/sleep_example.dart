@@ -1,4 +1,4 @@
-import 'package:riverpod_test/riverpod_test.dart';
+import 'package:wt_riverpod_test/riverpod_test.dart';
 
 void main() async {
   print('Sleep example.');

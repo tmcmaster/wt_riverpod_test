@@ -1,7 +1,7 @@
 import 'package:riverpod/riverpod.dart';
-import 'package:riverpod_test/riverpod_test.dart';
-import 'package:riverpod_test/src/prime_wait_run.dart';
 import 'package:test/test.dart';
+import 'package:wt_riverpod_test/riverpod_test.dart';
+import 'package:wt_riverpod_test/src/prime_wait_run.dart';
 
 void main() {
   final providerOne = Provider((_) => 1);
